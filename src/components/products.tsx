@@ -1,7 +1,7 @@
 
 import productsData from '../../data.json'; // adjust path
 import './products.css';
-import cart from '../assets/images/icon-add-to-cart.svg'
+import cart from '/assets/images/icon-add-to-cart.svg'
 
 function Products() {
     return (
@@ -15,11 +15,25 @@ function Products() {
                         {productsData.map((product) => (
                             <div key={product.name} className='flex flex-col gap-1'>
                                 <div className="w-full">
-                                    <img
-                                        className="w-full rounded-xl"
-                                        src={`${import.meta.env.BASE_URL}${product.image.thumbnail}`}
-                                        alt={product.name}
-                                    />
+                                    <picture>
+                                        <source
+                                            media="(min-width:1024px)" // desktop
+                                            srcSet={`${import.meta.env.BASE_URL}${product.image.desktop}`}
+                                        />
+                                        <source
+                                            media="(min-width:640px)" // tablet
+                                            srcSet={`${import.meta.env.BASE_URL}${product.image.tablet}`}
+                                        />
+                                        <source
+                                            media="(max-width:639px)" // mobile
+                                            srcSet={`${import.meta.env.BASE_URL}${product.image.mobile}`}
+                                        />
+                                        <img
+                                            className="w-full rounded-xl"
+                                            src={`${import.meta.env.BASE_URL}${product.image.thumbnail}`} // fallback
+                                            alt={product.name}
+                                        />
+                                    </picture>
                                     <div className="flex justify-center -mt-6">
                                         <button
                                             className="inline-flex items-center gap-2 whitespace-nowrap cursor-pointer rounded-full px-6 py-2 shadow-md border border-[var(--Rose-300)] bg-[var(--Rose-50)] hover:border-[var(--Red)] hover:text-[var(--Red)] pointer"
