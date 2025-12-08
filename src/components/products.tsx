@@ -1,5 +1,6 @@
 
 import productsData from '../../data.json'; // adjust path
+import Cartsidebar from './cartsidebar';
 import './products.css';
 import cart from '/assets/images/icon-add-to-cart.svg'
 
@@ -44,7 +45,7 @@ function Products() {
                                         </button>
                                     </div>
                                 </div>
-                                <h3 className="text-[var(--Rose-500)] mt-10">{product.category}</h3>
+                                <h3 className="text-[var(--Rose-500)] mt-10 text-sm">{product.category}</h3>
                                 <p className="font-semibold">{product.name}</p>
                                 <p className="text-[var(--Red)] font-bold">${product.price.toFixed(2)}</p>
                             </div>
@@ -52,8 +53,8 @@ function Products() {
                     </div>
                 </div>
                 {/* Right: 1/3 */}
-                <div className="col-span-1 bg-gray-50 p-4 rounded-lg">
-                    Sidebar or whatever you need
+                <div className="col-span-1">
+                 <Cartsidebar />
                 </div>
             </div>
         </>
