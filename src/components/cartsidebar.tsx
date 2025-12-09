@@ -47,7 +47,9 @@ const Cartsidebar: React.FC<CartsidebarProps> = ({ cartItems, onRemove }) => {
           ))}
           <div className='flex flex-row justify-between mb-3'>
             <span>Order Total</span>
-            <span className='font-bold text-[var(--Rose-900)] text-2xl'>$</span>
+            <span className='font-bold text-[var(--Rose-900)] text-2xl'>
+              ${cartItems.reduce((total, item) => total + item.price * item.quantity, 0).toFixed(2)}
+            </span>
           </div>
           <div className="flex flex-row w-full bg-[var(--Rose-50)] rounded-lg p-3 mb-4">
             <span className="flex items-center gap-1 mx-auto">
