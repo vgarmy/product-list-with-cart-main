@@ -126,7 +126,7 @@ function Products() {
         <Cartsidebar
           cartItems={cartItems}
           onRemove={(index) => setCartItems(prev => prev.filter((_, i) => i !== index))}
-          onReset={() => setCartItems([])} // clears all items
+          onReset={() => setCartItems([])}
         />
       </div>
     </div>
