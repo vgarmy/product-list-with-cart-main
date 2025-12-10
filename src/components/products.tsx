@@ -47,25 +47,29 @@ function Products() {
             return (
               <div key={product.name} className="flex flex-col gap-1">
                 <div className="w-full">
-                  <picture>
-                    <source
-                      media="(min-width:1024px)"
-                      srcSet={`${import.meta.env.BASE_URL}${product.image.desktop}`}
-                    />
-                    <source
-                      media="(min-width:640px)"
-                      srcSet={`${import.meta.env.BASE_URL}${product.image.tablet}`}
-                    />
-                    <source
-                      media="(max-width:639px)"
-                      srcSet={`${import.meta.env.BASE_URL}${product.image.mobile}`}
-                    />
-                    <img
-                      className="w-full rounded-xl"
-                      src={`${import.meta.env.BASE_URL}${product.image.thumbnail}`}
-                      alt={product.name}
-                    />
-                  </picture>
+                  <div className={`relative w-full rounded-xl ${cartItem ? 'outline outline-2 outline-[var(--Red)]' : ''}`}>
+                    <picture>
+                      <source
+                        media="(min-width:1024px)"
+                        srcSet={`${import.meta.env.BASE_URL}${product.image.desktop}`}
+                      />
+                      <source
+                        media="(min-width:640px)"
+                        srcSet={`${import.meta.env.BASE_URL}${product.image.tablet}`}
+                      />
+                      <source
+                        media="(max-width:639px)"
+                        srcSet={`${import.meta.env.BASE_URL}${product.image.mobile}`}
+                      />
+                      <img
+                        className="w-full h-full block rounded-xl"
+                        src={`${import.meta.env.BASE_URL}${product.image.thumbnail}`}
+                        alt={product.name}
+                      />
+                    </picture>
+                  </div>
+
+
                   <div className="flex justify-center -mt-6 relative w-full">
                     <div className="relative w-[140px] h-[42px]">
                       <button
