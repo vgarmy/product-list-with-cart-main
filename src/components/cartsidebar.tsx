@@ -29,9 +29,9 @@ const Cartsidebar: React.FC<CartsidebarProps> = ({ cartItems, onRemove }) => {
               <span className='font-bold text-sm mb-1'>{item.name}</span>
               <span className='flex flex-row justify-between'>
                 <span className='flex flex-row gap-5'>
-                  <span className='font-bold text-[var(--Red)]'>{item.quantity}x</span>
-                  <span className='text-[var(--Rose-500)] text-end'>@ ${(item.price).toFixed(2)}</span>
-                  <span className='font-bold text-[var(--Rose-400)] text-end'>${(item.price * item.quantity).toFixed(2)}</span>
+                  <span className='font-bold text-[var(--Red)] w-8'>{item.quantity}x</span>
+                  <span className='text-[var(--Rose-500)]'>@ ${(item.price).toFixed(2)}</span>
+                  <span className='font-bold text-[var(--Rose-400)]'>${(item.price * item.quantity).toFixed(2)}</span>
                 </span>
                 <span className="flex content-end">
                   <img
@@ -42,7 +42,7 @@ const Cartsidebar: React.FC<CartsidebarProps> = ({ cartItems, onRemove }) => {
                   />
                 </span>
               </span>
-              <hr className="border-t-1 border-[var(--Rose-300)] my-4" />
+              <hr className="border-t-1 border-[var(--Rose-300)] mb-3 mt-4" />
             </div>
           ))}
           <div className='flex flex-row justify-between mb-3'>
