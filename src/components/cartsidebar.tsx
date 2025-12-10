@@ -75,21 +75,21 @@ const Cartsidebar: React.FC<CartsidebarProps> = ({ cartItems, onRemove, onReset 
           </div>
           <button
             onClick={handleConfirmOrder}
-            className="w-full bg-[var(--Red)] text-[var(--Rose-50)] font-bold py-3 rounded-full text-center hover:bg-red-700 cursor-pointer"
+            className="w-full bg-[var(--Red)] text-[var(--Rose-50)] py-4 rounded-full text-center hover:bg-red-700 cursor-pointer"
           >
             Confirm Order
           </button>
         </div>
       )}
       {showModal && (
-        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
-          <div className="bg-white p-6 rounded-lg w-[100%] max-w-md">
+        <div className="fixed inset-0 bg-black/50 flex items-end sm:items-center justify-center z-50">
+          <div className="bg-white p-6 rounded-t-lg sm:rounded-lg w-[100%] max-w-md">
             <div className='flex flex-col'>
               <img src={confirmed} className='h-10 w-10' />
               <h2 className="text-3xl font-bold mt-4 mb-1">Order Summary</h2>
               <p className='text-[var(--Rose-400)] text-sm font-semibold'>We hope you enjoy your food!</p>
             </div>
-            <div className='flex flex-col rounded bg-[var(--Rose-100)] p-5 mt-5'>
+            <div className='flex flex-col rounded-lg bg-[var(--Rose-100)] p-5 mt-5'>
               {cartItems.map((item, index) => (
                 <>
                   <div key={index} className="flex flex-row items-center">
@@ -115,10 +115,10 @@ const Cartsidebar: React.FC<CartsidebarProps> = ({ cartItems, onRemove, onReset 
             </div>
             <button
                onClick={() => {
-                handleCloseModal();  // hide modal
-                onReset();           // reset cart
+                handleCloseModal();
+                onReset();
               }}    
-              className="mt-4 w-full bg-[var(--Red)] text-white py-2 rounded-full hover:bg-red-700 cursor-pointer"
+              className="mt-4 w-full bg-[var(--Red)] text-white py-4 rounded-full hover:bg-red-700 cursor-pointer"
             >
               Start New Order
             </button>
