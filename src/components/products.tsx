@@ -38,7 +38,7 @@ function Products() {
     cartItems.find(item => item.name === product.name);
 
   return (
-    <div className="grid grid-cols-3 gap-[20px]">
+    <div className="grid grid-cols-1 sm:grid-cols-3 sm:gap-[20px]">
       <div className="col-span-2">
         <h1 className="text-3xl font-bold mb-4">Desserts</h1>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-[26px] gap-y-[40px]">
@@ -114,7 +114,7 @@ function Products() {
                     </div>
                   </div>
                 </div>
-                <h3 className="text-[var(--Rose-500)] mt-10 text-sm">{product.category}</h3>
+                <h3 className="text-[var(--Rose-500)] mt-4 sm:mt-10 text-sm">{product.category}</h3>
                 <p className="font-semibold">{product.name}</p>
                 <p className="text-[var(--Red)] font-bold">${product.price.toFixed(2)}</p>
               </div>
@@ -122,7 +122,7 @@ function Products() {
           })}
         </div>
       </div>
-      <div className="col-span-1">
+      <div className="col-span-1 sm:w-100">
         <Cartsidebar cartItems={cartItems} onRemove={(index) => setCartItems(prev => prev.filter((_, i) => i !== index))} />
       </div>
     </div>

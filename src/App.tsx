@@ -5,7 +5,7 @@ function App() {
 
   return (
     <>
-      <div className="max-w-[1440px] mx-auto px-[110px] py-[100px]">
+      <div className="max-w-[1440px] mx-auto px-[30px] py-[35px] sm:px-[110px] sm:py-[100px]">
         <Products />
       </div>
     </>

@@ -12,7 +12,7 @@ interface CartsidebarProps {
 
 const Cartsidebar: React.FC<CartsidebarProps> = ({ cartItems, onRemove }) => {
   return (
-    <div className='bg-white p-5 rounded-lg flex flex-col gap-5'>
+    <div className='bg-white p-5 rounded-lg flex flex-col gap-5 mt-10 sm:mt-0'>
       <p className='text-2xl font-bold text-[var(--Red)]'>
         Your Cart ({cartItems.reduce((sum, item) => sum + item.quantity, 0)})
       </p>
