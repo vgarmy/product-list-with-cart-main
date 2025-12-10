@@ -54,11 +54,11 @@ Users should be able to:
 
 ### What I learned
 
-i lerad alot about React.
+i learned alot about React.
 
 ### Continued development
 
-More focus on React and Javasript
+More focus on React and Javascript
 
 ## Author
 
