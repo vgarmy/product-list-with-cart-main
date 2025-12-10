@@ -123,7 +123,11 @@ function Products() {
         </div>
       </div>
       <div className="col-span-1 sm:w-100">
-        <Cartsidebar cartItems={cartItems} onRemove={(index) => setCartItems(prev => prev.filter((_, i) => i !== index))} />
+        <Cartsidebar
+          cartItems={cartItems}
+          onRemove={(index) => setCartItems(prev => prev.filter((_, i) => i !== index))}
+          onReset={() => setCartItems([])} // clears all items
+        />
       </div>
     </div>
   );
